@@ -30,8 +30,8 @@ Studio.hasMany(Movie);
 
 const syncAndSeed = async() => {
     await db.sync({ force: true });
-    const marvel = await Studio.create({name: 'marvel'});
-    const dc = await Studio.create({name: 'dc'});
+    const marvel = await Studio.create({name: 'Marvel'});
+    const dc = await Studio.create({name: 'DC'});
     await Movie.create({name: 'Black Panther', studioId: marvel.id });
     await Movie.create({name: 'The Batman', studioId: dc.id});
 }
